@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root { --obsrvr-ink:#1A1A1A; --obsrvr-muted:#5C5C58; --obsrvr-paper:#FAFAF8; --obsrvr-card:#F3F1EC; --obsrvr-teal:#1F4E5F; --obsrvr-coral:#E05E2B; }
+  html { font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif; }
+}
+
+@layer components {
+  .eyebrow { @apply font-mono text-xs font-semibold uppercase tracking-[0.18em] text-obsrvr-coral; }
+  .btn-primary { @apply inline-flex items-center rounded-full bg-obsrvr-ink px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-obsrvr-teal; }
+  .btn-secondary { @apply inline-flex items-center rounded-full border border-black/10 bg-white px-5 py-3 text-sm font-semibold text-obsrvr-ink shadow-sm transition hover:border-obsrvr-teal/30 hover:text-obsrvr-teal; }
+  .form-input { @apply w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm outline-none transition placeholder:text-obsrvr-muted/60 focus:border-obsrvr-teal focus:ring-4 focus:ring-obsrvr-teal/10; }
+}
