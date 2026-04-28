@@ -18,7 +18,7 @@
             gotools
             templ
             nodejs_22
-            nodePackages.tailwindcss
+            tailwindcss
             air
           ];
 
