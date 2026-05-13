@@ -1,0 +1,81 @@
+{
+  "brand": {
+    "name": "OBSRVR",
+    "href": "/",
+    "description": "Structured data infrastructure for Stellar and Soroban. Based in Ohio."
+  },
+  "nav": {
+    "productsLabel": "Products",
+    "products": [
+      {
+        "title": "Prism",
+        "description": "The Soroban-first block explorer.",
+        "href": "/prism",
+        "homepageHref": "/#prism",
+        "icon": "hex"
+      },
+      {
+        "title": "Data APIs",
+        "description": "Structured Stellar data via REST.",
+        "href": "/apis",
+        "icon": "api"
+      },
+      {
+        "title": "Compliance",
+        "description": "Stablecoin flow intelligence.",
+        "href": "/compliance",
+        "icon": "shield"
+      }
+    ],
+    "links": [
+      { "title": "Platform", "href": "/platform", "activeKey": "platform" },
+      { "title": "Pricing", "href": "/pricing", "activeKey": "pricing" },
+      { "title": "Docs", "href": "#docs", "activeKey": "docs" }
+    ],
+    "actions": [
+      { "title": "Sign in", "href": "#signin", "className": "btn btn-tertiary", "style": "small" },
+      { "title": "Contact sales", "href": "#contact", "className": "btn btn-primary btn-sm" }
+    ]
+  },
+  "footer": {
+    "columns": [
+      {
+        "title": "Products",
+        "links": [
+          { "title": "Prism", "href": "/prism" },
+          { "title": "APIs", "href": "/apis" },
+          { "title": "Compliance", "href": "/compliance" },
+          { "title": "Platform", "href": "/platform" }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          { "title": "About", "href": "#about" },
+          { "title": "Pricing", "href": "/pricing" },
+          { "title": "Contact", "href": "#contact" }
+        ]
+      },
+      {
+        "title": "Developers",
+        "links": [
+          { "title": "Docs", "href": "#docs" },
+          { "title": "API reference", "href": "#api-ref" },
+          { "title": "nebu", "href": "https://nebu.withobsrvr.com" },
+          { "title": "MCP server", "href": "#mcp" }
+        ]
+      },
+      {
+        "title": "Resources",
+        "links": [
+          { "title": "Lake whitepaper", "href": "#whitepaper" },
+          { "title": "Changelog", "href": "#changelog" },
+          { "title": "Status", "href": "#status" },
+          { "title": "Legal", "href": "#legal" }
+        ]
+      }
+    ],
+    "copyright": "© 2026 Obsrvr · Dayton, OH",
+    "legal": ["Privacy", "Terms", "Security"]
+  }
+}

@@ -1,0 +1,356 @@
+/* Platform page styles — architecture diagram, access cards, scale grid, deployment. */
+
+/* ---------- Hero meta ---------- */
+.plat-hero-meta {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  max-width: 960px;
+}
+.plat-hero-meta > div { display: flex; flex-direction: column; gap: 4px; }
+.plat-hero-meta .k {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.plat-hero-meta .v {
+  font-size: 15px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* ---------- Architecture diagram ---------- */
+.plat-diagram {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+}
+.plat-layer {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 36px;
+  padding: 24px 0;
+}
+.plat-layer-meta .plat-layer-num {
+  font-family: var(--ff-mono);
+  font-size: 12px;
+  color: var(--text-3);
+  letter-spacing: 0.08em;
+}
+.plat-layer-meta .plat-layer-name {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 4px;
+  color: var(--text);
+}
+.plat-layer-meta .plat-layer-desc {
+  font-size: 13.5px;
+  color: var(--text-2);
+  margin-top: 8px;
+  line-height: 1.55;
+  max-width: 240px;
+}
+.plat-nodes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  align-content: start;
+}
+.plat-node {
+  border: 1px solid var(--border);
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 14px 16px;
+  min-height: 64px;
+}
+.plat-node .n {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+.plat-node .s {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  color: var(--text-3);
+  margin-top: 3px;
+  letter-spacing: 0.02em;
+}
+.plat-node.accent {
+  background: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 2px 0 rgba(224, 94, 43, 0.12);
+}
+.plat-node.accent .n { color: var(--accent-ink); }
+
+.plat-layer-surface { padding-bottom: 28px; }
+.plat-layer-ingest .plat-nodes {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.plat-connector {
+  height: 22px;
+  margin-left: 296px;
+  position: relative;
+}
+.plat-connector::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0; bottom: 0;
+  width: 1px;
+  background: var(--border-strong);
+}
+.plat-connector::after {
+  content: "";
+  position: absolute;
+  left: calc(50% - 3px);
+  bottom: 0;
+  width: 7px; height: 7px;
+  border-right: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--border-strong);
+  transform: rotate(45deg);
+}
+
+/* ---------- Principles ---------- */
+.plat-principles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 48px;
+}
+.plat-principle .num {
+  font-family: var(--ff-mono);
+  font-size: 12px;
+  color: var(--accent-ink);
+  letter-spacing: 0.08em;
+}
+.plat-principle h4 {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin: 10px 0 10px;
+  line-height: 1.25;
+}
+.plat-principle p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--text-2);
+  margin: 0;
+}
+
+/* ---------- Access ---------- */
+.plat-access-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.plat-access {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 28px 20px;
+  display: flex;
+  flex-direction: column;
+}
+.plat-access .pa-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.plat-access .pa-kind {
+  font-family: var(--ff-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--accent-ink);
+  background: rgba(224, 94, 43, 0.10);
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+.plat-access .pa-name {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.plat-access p {
+  color: var(--text-2);
+  font-size: 14.5px;
+  line-height: 1.55;
+  margin: 0 0 18px;
+}
+.plat-access .pa-code {
+  background: #17171A;
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin-top: auto;
+}
+.plat-access .pa-code pre {
+  margin: 0;
+  font-family: var(--ff-mono);
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--code-fg);
+  white-space: pre-wrap;
+}
+.plat-access .k-sql { color: var(--code-keyword); }
+.plat-access .s-sql { color: var(--code-string); }
+.plat-access .n-sql { color: var(--code-fn); }
+.plat-access .c-sql { color: var(--code-muted); font-style: italic; }
+
+/* ---------- Scale ---------- */
+.plat-scale-grid {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 72px;
+  align-items: start;
+}
+.plat-scale-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px 24px;
+}
+.pss {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+.pss-num {
+  font-family: var(--ff-mono);
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  line-height: 1;
+}
+.pss-num .unit {
+  color: var(--accent);
+  font-size: 0.65em;
+  margin-left: 2px;
+}
+.pss-k {
+  font-size: 13px;
+  color: var(--text);
+  margin-top: 10px;
+  font-weight: 500;
+}
+.pss-s {
+  font-size: 12.5px;
+  color: var(--text-3);
+  margin-top: 4px;
+  line-height: 1.45;
+}
+
+/* ---------- Deployment ---------- */
+.plat-deploy {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.pd-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.pd-card.pd-featured {
+  border-color: var(--text);
+  background: var(--ink-dark);
+  color: #F5F5F2;
+}
+.pd-card.pd-featured .pd-kind { color: var(--accent); }
+.pd-card.pd-featured h4,
+.pd-card.pd-featured p,
+.pd-card.pd-featured .pd-ul li,
+.pd-card.pd-featured .pd-fit { color: #F5F5F2; }
+.pd-card.pd-featured .pd-ul li::before { background: var(--accent); }
+.pd-card.pd-featured .pd-fit { color: #B8B8B2; border-top-color: rgba(255,255,255,0.12); }
+.pd-flag {
+  position: absolute;
+  top: 16px; right: 16px;
+  font-family: var(--ff-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  background: var(--accent);
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+.pd-kind {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--accent-ink);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.pd-card h4 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin: 10px 0 12px;
+  line-height: 1.25;
+}
+.pd-card p {
+  color: var(--text-2);
+  font-size: 14.5px;
+  line-height: 1.55;
+  margin: 0 0 20px;
+}
+.pd-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pd-ul li {
+  font-size: 13.5px;
+  color: var(--text);
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.5;
+}
+.pd-ul li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 9px;
+  width: 8px; height: 1px;
+  background: var(--accent);
+}
+.pd-fit {
+  font-size: 13px;
+  color: var(--text-3);
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+  margin-top: auto;
+  line-height: 1.5;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1000px) {
+  .plat-scale-grid { grid-template-columns: 1fr; gap: 40px; }
+  .plat-deploy, .plat-principles { grid-template-columns: 1fr 1fr; }
+  .plat-access-grid { grid-template-columns: 1fr; }
+  .plat-layer { grid-template-columns: 1fr; gap: 18px; }
+  .plat-connector { margin-left: 24px; }
+  .plat-nodes { grid-template-columns: 1fr 1fr; }
+  .plat-layer-ingest .plat-nodes { grid-template-columns: 1fr 1fr; }
+  .plat-hero-meta { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 720px) {
+  .plat-deploy, .plat-principles, .plat-scale-stats { grid-template-columns: 1fr; }
+  .plat-nodes, .plat-layer-ingest .plat-nodes { grid-template-columns: 1fr; }
+  .plat-diagram { padding: 24px; }
+}

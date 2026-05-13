@@ -1,19 +1,18 @@
-.PHONY: dev generate css build run
+.PHONY: dev site-js build run visual-diff
 
-generate:
-	templ generate
+site-js:
+	npm run site:build
 
-css:
-	tailwindcss -i ./static/css/input.css -o ./static/css/styles.css --minify
-
-build: generate css
+build: site-js
 	go build ./cmd/site
 
-run: generate css
+run: site-js
 	go run ./cmd/site
+
+visual-diff: site-js
+	npm run visual:diff
 
 dev:
 	@echo "Run these in separate terminals:"
-	@echo "  templ generate --watch"
-	@echo "  tailwindcss -i ./static/css/input.css -o ./static/css/styles.css --watch"
+	@echo "  npm run site:build"
 	@echo "  air -c .air.toml"

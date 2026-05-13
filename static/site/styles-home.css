@@ -1,0 +1,203 @@
+/* Homepage additions: segment artifacts, hero dots, segment style variants. */
+
+/* ---------- Hero scene dots ---------- */
+.hv-foot .hv-dots {
+  display: inline-flex; gap: 6px; align-items: center;
+}
+.hv-foot .hv-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--border-strong);
+  transition: background 200ms ease, transform 200ms ease;
+}
+.hv-foot .hv-dot.on {
+  background: var(--accent);
+  transform: scale(1.25);
+}
+.hv-rows {
+  transition: opacity 260ms ease, transform 260ms ease;
+}
+.hv-rows.fading { opacity: 0.18; transform: translateY(-2px); }
+
+/* ---------- Segment cards: new layout w/ artifacts ---------- */
+.segments .seg-card {
+  padding: 0;
+  overflow: hidden;
+  min-height: unset;
+}
+.segments .seg-card .seg-body {
+  padding: 28px 32px 32px;
+  display: flex; flex-direction: column;
+  flex: 1;
+}
+.segments .seg-card .seg-artifact {
+  padding: 20px 20px 0;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--bg-well) 0%, #fff 100%);
+  height: 208px;
+  overflow: hidden;
+  position: relative;
+}
+.segments .seg-card h3 {
+  font-size: 22px;
+}
+
+/* Style variants */
+.seg-style-plain .seg-artifact { display: none; }
+.seg-style-accent .seg-artifact { display: none; }
+.seg-style-accent .seg-card {
+  border-top: 3px solid var(--border);
+  transition: border-top-color 160ms ease;
+}
+.seg-style-accent .seg-card:nth-child(1) { border-top-color: var(--accent); }
+.seg-style-accent .seg-card:nth-child(2) { border-top-color: var(--teal); }
+.seg-style-accent .seg-card:nth-child(3) { border-top-color: var(--accent-ink); }
+
+/* ---------- Segment artifact: API ---------- */
+.sa {
+  font-family: var(--ff-mono);
+  font-size: 11.5px;
+  color: var(--text-2);
+  height: 100%;
+}
+.sa-api {
+  background: #17171A;
+  color: var(--code-fg);
+  border-radius: 8px 8px 0 0;
+  padding: 12px 16px 0;
+  margin: -20px -20px 0;
+  height: calc(100% + 20px);
+  display: flex; flex-direction: column;
+}
+.sa-api .sa-head {
+  display: flex; gap: 8px; align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  font-size: 11px;
+}
+.sa-api .sa-head .method {
+  background: var(--accent);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.sa-api .sa-head .path { color: #9CA3AF; }
+.sa-api .sa-head .path .m { color: var(--code-string); }
+.sa-api pre {
+  margin: 8px 0 0; padding: 0;
+  font-size: 11.5px; line-height: 1.55;
+  color: var(--code-fg);
+  overflow: hidden;
+}
+.sa-api .k { color: var(--code-keyword); }
+.sa-api .s { color: var(--code-string); }
+.sa-api .n { color: var(--code-fn); }
+.sa-api .p { color: #7A7A78; }
+
+/* ---------- Segment artifact: Platform table ---------- */
+.sa-platform {
+  display: flex; flex-direction: column;
+  height: 100%;
+}
+.sa-platform .sa-head {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-bottom: 10px; margin-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  font-size: 11px;
+}
+.sa-platform .sa-head .tbl { color: var(--accent-ink); font-weight: 500; }
+.sa-platform .sa-head .rows { color: var(--text-3); font-family: var(--ff-mono); }
+.sa-table { display: flex; flex-direction: column; }
+.sa-tr {
+  display: grid;
+  grid-template-columns: 1.1fr 0.7fr 0.9fr 1fr;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 11.5px;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+.sa-tr:last-child { border-bottom: none; }
+.sa-th {
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  font-family: var(--ff-mono);
+}
+.sa-platform .mono { font-family: var(--ff-mono); color: var(--text); }
+.sa-platform .pill {
+  font-family: var(--ff-sans);
+  font-size: 10.5px;
+  background: rgba(224, 94, 43, 0.10);
+  color: var(--accent-ink);
+  padding: 2px 8px;
+  border-radius: 999px;
+  width: fit-content;
+  font-weight: 500;
+}
+.sa-platform .pill.muted {
+  background: var(--bg-well);
+  color: var(--text-2);
+}
+
+/* ---------- Segment artifact: Compliance ---------- */
+.sa-comp {
+  display: flex; flex-direction: column;
+  height: 100%;
+  font-family: var(--ff-sans);
+}
+.sa-comp .sa-head {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 11.5px;
+  color: var(--text-2);
+  padding-bottom: 8px;
+}
+.sa-comp .sa-head .status {
+  display: inline-flex; gap: 6px; align-items: center;
+  color: var(--accent-ink);
+  font-weight: 500;
+}
+.sa-comp .sa-head .status .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent);
+}
+.sa-comp .sa-spark {
+  height: 44px;
+  margin: 4px 0 10px;
+}
+.sa-comp .sa-spark svg { width: 100%; height: 100%; display: block; }
+.sa-comp .sa-flags { display: flex; flex-direction: column; gap: 5px; }
+.sa-comp .sa-flag {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 10px;
+  align-items: center;
+  font-size: 11px;
+  padding: 6px 8px;
+  background: rgba(224, 94, 43, 0.06);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 4px 4px 0;
+}
+.sa-comp .sa-flag.medium {
+  background: rgba(31, 78, 95, 0.06);
+  border-left-color: var(--teal);
+}
+.sa-comp .sa-flag .sev {
+  font-family: var(--ff-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--accent-ink);
+}
+.sa-comp .sa-flag.medium .sev { color: var(--teal); }
+.sa-comp .sa-flag .msg { color: var(--text); }
+
+/* Tighter card height in artifact style */
+.seg-style-artifact .seg-card { min-height: 0; }
+
+@media (max-width: 960px) {
+  .segments .seg-card .seg-artifact { height: 180px; }
+}

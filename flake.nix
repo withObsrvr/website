@@ -1,5 +1,5 @@
 {
-  description = "Obsrvr website development shell (Go + templ + Tailwind + htmx)";
+  description = "Obsrvr website development shell (Go + React/esbuild + mock-matched static site)";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -16,17 +16,22 @@
             go
             gopls
             gotools
-            templ
             nodejs_22
-            tailwindcss
             air
+            gnumake
+            git
+            chromium
           ];
 
           shellHook = ''
+            export PS1="\[\033[1;36m\](obsrvr-site)\[\033[0m\] \[\033[1;32m\]\w\[\033[0m\] \[\033[1;34m\]$\[\033[0m\] "
+
             echo "Obsrvr website dev shell"
-            echo "  templ generate"
-            echo "  tailwindcss -i ./static/css/input.css -o ./static/css/styles.css --watch"
-            echo "  go run ./cmd/site"
+            echo "  npm install          # first run, installs React/esbuild from package-lock.json"
+            echo "  npm run site:build   # bundle src/site JSX into static/site/dist"
+            echo "  make run             # build bundles and run the Go site"
+            echo "  make visual-diff     # compare live routes against ai-docs/site mocks"
+            echo "  go run ./cmd/site    # run directly after npm run site:build"
           '';
         };
       });

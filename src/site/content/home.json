@@ -1,0 +1,49 @@
+{
+  "defaults": {
+    "typeface": "plex",
+    "accentIntensity": "bright",
+    "heroVariant": "split",
+    "tagline": "ship",
+    "segmentStyle": "artifact"
+  },
+  "hero": {
+    "eyebrow": "Now in early access · SCF #42",
+    "ctas": [
+      { "title": "Request access", "href": "#contact", "className": "btn btn-primary" },
+      { "title": "View documentation", "href": "#docs", "className": "btn btn-secondary" }
+    ],
+    "band": ["Powering Prism", "Built on Stellar", "SCF-funded", "Based in Ohio"]
+  },
+  "taglines": {
+    "current": {
+      "h1": "Structured data infrastructure for Stellar and Soroban.",
+      "lead": "Obsrvr turns raw ledger data into the clean, queryable, audit-ready data products that wallets, protocols, and compliance teams build on.",
+      "label": "0 · Current — \"Structured data infrastructure…\""
+    },
+    "ship": {
+      "h1": "Ship on Stellar without building the data layer.",
+      "lead": "Obsrvr gives developer teams decoded transactions, structured tables, and production APIs from day one — so you build the product, not the pipeline.",
+      "label": "1 · Ship on Stellar without building the data layer."
+    },
+    "decoded": {
+      "h1": "Every Stellar transaction, decoded and ready to build on.",
+      "lead": "Raw XDR becomes readable transfers, swaps, and contract events. Wallets, protocols, and compliance teams all read from the same canonical layer.",
+      "label": "2 · Every Stellar transaction, decoded…"
+    },
+    "platform": {
+      "h1": "The data platform for teams building on Stellar.",
+      "lead": "One platform — structured data, interpretation APIs, and compliance tooling — that every team on Stellar can build on.",
+      "label": "3 · The data platform for teams building on Stellar."
+    },
+    "production": {
+      "h1": "Turn Stellar into production-grade data.",
+      "lead": "Obsrvr ingests every ledger, decodes every Soroban event, and delivers the canonical tables and APIs that wallets, protocols, and compliance teams run in production.",
+      "label": "4 · Turn Stellar into production-grade data."
+    },
+    "audit": {
+      "h1": "Audit-ready Stellar data, from ingestion to answer.",
+      "lead": "Obsrvr turns raw ledger data into the clean, queryable, audit-ready data products that wallets, protocols, and compliance teams build on.",
+      "label": "5 · Audit-ready Stellar data, from ingestion to answer."
+    }
+  }
+}
