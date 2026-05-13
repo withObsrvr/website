@@ -1,5 +1,5 @@
 import esbuild from 'esbuild';
-import { copyFile, mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const pages = {
@@ -14,10 +14,7 @@ const pages = {
 const entryDir = path.join('tmp', 'site-entries');
 await mkdir(entryDir, { recursive: true });
 await mkdir(path.join('static', 'site', 'dist'), { recursive: true });
-const assetsDir = path.join('static', 'site', 'assets');
-await mkdir(assetsDir, { recursive: true });
-await copyFile(path.join('ai-docs', 'obsrvr_logo_white_2.svg'), path.join(assetsDir, 'obsrvr-mark-white.svg'));
-await copyFile(path.join('ai-docs', 'obsrvr_logo.svg'), path.join(assetsDir, 'obsrvr-mark.svg'));
+await mkdir(path.join('static', 'site', 'assets'), { recursive: true });
 
 for (const [name, files] of Object.entries(pages)) {
   const entryPath = path.join(entryDir, `${name}.jsx`);
